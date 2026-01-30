@@ -7,10 +7,11 @@
 
 const display = document.getElementById('app')
 const form = document.getElementById('form')
+const baseUrl = "https://sams-demo.onrender.com";
 
 
 async function fetchData() {
-  const response = await fetch(`http://localhost:4242/messages`)
+  const response = await fetch(`https://sams-demo.onrender.com/messages`)
   const messages = await response.json()
 
   console.log(messages)
@@ -46,7 +47,7 @@ async function handleSubmit(event) {
   const userInput = Object.fromEntries(formData)
   const userInputJSON = JSON.stringify(userInput)
 
-  const response = await fetch(`http://localhost:4242/messages`, {
+  const response = await fetch(`https://sams-demo.onrender.com/messages`, {
     headers: {
       "Content-Type" : "application/json"
     },
